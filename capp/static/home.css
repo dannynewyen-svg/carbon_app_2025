@@ -1,99 +1,98 @@
-/* Body background to eliminate white scrollbar area */
+/* =========================
+   GLOBAL
+========================= */
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom right, #b8eccc, #b8eccc);
+  background: none;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-/* Hoved bildet + Tittel */
-.section_header_home {
-  background: linear-gradient(to bottom right, #e6f4ea, #c5c8d9);
+/* =========================
+   HERO FULLSKJERM MED VIDEO
+========================= */
+.hero_section {
   position: relative;
-  color: #fff;
-  height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
   width: 100%;
-  margin: 0;
-  box-sizing: border-box;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
+  background: none;
+}
+
+.hero_video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .hero_overlay {
-  background: rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
-  padding: 0 20px;
+  background: rgba(0,0,0,0.2); /* mørk overlay for bedre kontrast */
+  color: #fff;
 }
 
 .hero_content h1 {
-  font-size: 3.5rem;
-  font-weight: 700;
+  font-size: 3rem;
   margin-bottom: 1rem;
 }
 
-.hero_content h1 .highlight {
-  color: #006400;
+.hero_content .highlight {
+  color: #7cc785;
 }
 
 .hero_content p {
   max-width: 700px;
   margin: 0 auto 2rem;
   font-size: 1.2rem;
-  line-height: 1.6;
-  color: #f0f0f0;
 }
 
 .hero_buttons {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  flex-wrap: wrap;
-}
-
-/* Get started- Log in knapp */
-.btn_primary,
-.btn_secondary {
-  padding: 14px 35px;
-  border-radius: 30px;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
 }
 
 .btn_primary {
   background-color: #7cc785;
-  color: #fff;
-}
-
-.btn_primary:hover {
-  background-color: #68b071;
+  padding: 10px 30px;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
 }
 
 .btn_secondary {
   background-color: transparent;
-  color: #fff;
-  border: 2px solid #fff;
+  color: white;
+  padding: 10px 30px;
+  border: 2px solid white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-.btn_secondary:hover {
-  background-color: #fff;
-  color: #7cc785;
-}
+.btn_primary:hover { background-color: #68b071; }
+.btn_secondary:hover { background-color: white; color: #7cc785; }
 
-/* What we do + Your impact */
+/* =========================
+   INFO-KORT
+========================= */
 .info_cards_container {
   display: flex;
   justify-content: center;
-  gap: 0;
+  gap: 1rem;
   margin-top: -50px;
   position: relative;
   z-index: 10;
@@ -103,172 +102,85 @@ body {
   background: #f8f8f8;
   color: #2c2c2c;
   padding: 20px;
-  border-radius: 0;
   max-width: 450px;
   text-align: left;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  align-self: center;
 }
 
 .impact_card {
   background: #2c2c2c;
   color: #fff;
   padding: 40px;
-  border-radius: 0;
   max-width: 450px;
   text-align: left;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
-}
-
-.impact_card:hover {
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-  transform: translateY(-3px);
 }
 
 .link_action {
   color: #7cc785;
   text-decoration: none;
   font-weight: 600;
-  border-bottom: 1px solid transparent;
-  transition: all 0.3s;
 }
 
 .link_action:hover {
-  border-color: #7cc785;
+  border-bottom: 1px solid #7cc785;
 }
 
-.custom-shape-divider-top-1759939526 {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-}
-
-.custom-shape-divider-top-1759939526 svg {
-    position: relative;
-    display: block;
-    width: calc(107% + 1.3px);
-    height: 149px;
-    transform: scaleY(-1);
-}
-
-.custom-shape-divider-top-1759939526 .shape-fill {
-    fill: #e7ebf0;
-}
-
-/* Explore more (tidligere developers section) */
+/* =========================
+   TEAM / EXPLORE MORE
+========================= */
 .section_developers {
-  background-color: #e7ebf0 !important;
+  background-color: #e7ebf0;
   padding: 100px 20px;
   text-align: center;
-
 }
 
-.developers_intro {
-  font-size: 1.1rem;
-  color: #333;
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-/* Team boxes (Tidligere developers) */
 .team_boxes {
   display: flex;
   justify-content: center;
-  gap: 3%;
+  gap: 1rem;
   margin-top: 40px;
 }
 
 .team_box {
-  border-radius: 0;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  height: 240px; 
+  flex: 1;
+  min-width: 200px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
-  color: #fff;
   text-align: center;
-  width: 32%;
-}
-
-.team_box:hover {
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-  transform: translateY(-3px);
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
 }
 
 .team_box h3 {
   margin: 0;
-  font-size: 1.2rem;
-  color: #fff;
 }
 
-.team_box h3 a {
-  color: #fff;
-  text-decoration: none;
+.team_box:hover {
+  transform: translateY(-3px);
 }
 
-.team_box h3 a:hover {
-  text-decoration: underline;
+/* INDIVIDUELL BOX-FARGE */
+.emissions_box { background-color: #555555; }
+.methodology_box { background-color: #7cc786; }
+.about_us_box { background-color: #555555; }
+
+/* =========================
+   SVG BØLGER
+========================= */
+.custom-shape-divider-top .shape-fill,
+.custom-shape-divider-bottom .shape-fill {
+  fill: #7cc785; /* Sett ønsket farge her */
 }
 
-/* Individuell box farge */
-.emissions_box {
-  background-color: #555555;
-}
-
-.methodology_box {
-  background-color: #7cc785;
-}
-
-.about_us_box {
-  background-color: #555555;
-}
-.custom-shape-divider-bottom-1759941253 {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-    background-color: #e7ebf0;
-}
-
-.custom-shape-divider-bottom-1759941253 svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 127px;
-    background-color: #e7ebf0;
-}
-
-.custom-shape-divider-bottom-1759941253 .shape-fill {
-    fill: #FFFFFF;
-}
-
-/*  RESPONSIVE  */
+/* =========================
+   RESPONSIVE (valgfritt)
+========================= */
 @media (max-width: 768px) {
-  .hero_content h1 {
-    font-size: 2.5rem;
-  }
-  .hero_content p {
-    font-size: 1rem;
-  }
-  .floating_card {
-    max-width: 90%;
-  }
-
-  .team_boxes {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .team_box {
-    width: 100%;
-  }
+  .hero_content h1 { font-size: 2.5rem; }
+  .hero_content p { font-size: 1rem; }
+  .team_boxes { flex-direction: column; gap: 20px; }
 }
